@@ -1,0 +1,132 @@
+<!-- Name : Poojanbhai Niteshbhai Patel
+UTA ID : 1001827807 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .connected {
+            padding: 10px auto;
+            background: #ccc;
+            color: #000;
+            min-width: 200px;
+            overflow: auto;
+        }
+
+        h3 {
+            padding: 10px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            border: 1px solid #111;
+            border-radius: 5px;
+        }
+
+        .form-div {
+            display: flex;
+            min-width: 750px;
+            flex-direction: column;
+            background: black;
+            color: white;
+        }
+
+        .form-div .watch-box {}
+
+        .form-div .watch-box p {
+            padding-left: 15px;
+        }
+
+        .form-div .send-box {
+            margin: 20px 0;
+            margin-left: 20px;
+        }
+        .form-div .send-box button {
+            margin-top: 10px;
+        }
+        .form-div .send-box .logout-btn {
+            background: red;
+            color: white;
+        }
+        .private-form-wrapper {
+            display: flex;
+        }
+        .private-form-wrapper .private-box {
+            padding: 10px;
+            border: 1px solid #111;
+            border-radius: 5px;
+            min-width: 500px;
+        }
+        .private-form-wrapper .send-box {
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .private-form-wrapper .send-box input, button {
+            margin-bottom: 10px;
+            display: block;
+        }
+        .private-form-wrapper .private-box h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>A Chat App</h1>
+    <div class="wrapper">
+        <div class="connected">
+            <h3>Online Users</h3>
+            <ol class="connected-users">
+
+            </ol>
+        </div>
+
+        <form class="form-div" id="chat-form">
+            <div class="watch-box">
+                <h3>messages</h3>
+            </div>
+            <div class="send-box">
+                <input type="text" placeholder="type a msg" id="public-input" />
+                <button type="submit">send</button>
+                <button type="submit" onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="private-form-wrapper">
+        <form class="private-form" id="private-chat">
+            <!-- <div class="watch-box">
+                <h3>messages</h3>
+            </div> -->
+            <div class="send-box">
+                <div>
+                    <input type="text" placeholder="send private msg to" id="private-input" />
+                </div>
+                <div>
+                    <input type="text" placeholder="type a private msg" id="private-msg-input" />
+                </div>
+                <div>
+                    <button type="submit">send</button>
+                </div>
+            </div>
+        </form>
+        <div class="private-box">
+            <h3>private messages</h3>
+        </div>
+    </div>
+    <script defer src="http://localhost:6363/socket.io/socket.io.js"></script>
+    <script defer src="index.js"></script>
+</body>
+
+</html>
